@@ -1,0 +1,38 @@
+{
+  "name": "lead-enrichment-microservice",
+  "version": "1.0.0",
+  "description": "Verifies email deliverability (Hunter.io + Abstract API) and phone line types (Abstract API) before leads are added to sales campaigns. CLI + Express microservice.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "lead-enrich": "bin/lead-enrich.js"
+  },
+  "scripts": {
+    "start": "node bin/lead-enrich.js serve",
+    "dev": "node --watch bin/lead-enrich.js serve",
+    "demo": "node bin/lead-enrich.js file samples/leads.csv --mock -o output/enriched-leads.xlsx",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "lead-enrichment",
+    "email-verification",
+    "phone-validation",
+    "hunter-io",
+    "abstract-api",
+    "sales-automation",
+    "express"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "csv-parse": "^7.0.3",
+    "csv-stringify": "^6.9.0",
+    "dotenv": "^16.6.1",
+    "exceljs": "^4.4.0",
+    "express": "^4.22.3",
+    "libphonenumber-js": "^1.13.15"
+  }
+}
